@@ -1,0 +1,293 @@
+body{
+    margin: 1.5em;
+   font-family: "poppins",sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    .hero-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("../IMG/main-shoe.jpg");
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        animation: introLoad 2s forwards;
+        background-size: cover;
+        background-position-x: 20%;
+        background-position-y: 20%;
+    }
+    a{
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+    .logo{
+        font-weight: bold;
+        color:white;
+        font-style: italic;
+        .logo-name{
+            color: rgb(80, 5, 13);
+        }
+        .shoe-text{
+            color: #ff0a7c;
+        }
+        .brand{
+            color: #ff5b0f;
+        }
+        &:hover{
+            .logo-name{
+                color: rgb(138, 21, 33);
+            }
+            .shoe-text{
+                color: #fa1480;
+            }
+            .brand{
+                color: #f55d17;
+            }
+        }
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        nav{
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: 45%;
+          border-left: solid 0.1px black;
+          border-top-left-radius: 5px;
+          background-color:white;
+          z-index: 999;
+          text-transform: uppercase;
+          transform: translateX(100%);
+          transition: transform 0.5s ease-in-out;
+          ul{
+            list-style-type: none;
+            padding: 0;
+            margin-top: 4em;
+           a{
+            font-size: medium;
+            color: black;
+            padding: 0.75em 2em;
+            display: block;
+            width: 100%;
+            &:hover{
+                background-color: rgb(214, 209, 209);
+            }
+           }
+          }
+          .close{
+            float: right;
+            margin-top: 0.4em;
+            margin-right: 0.4em;
+            width: 2em;
+            &:hover{
+               background-color: rgb(247, 243, 243);
+
+            }
+          }
+
+        }
+        svg{
+            width: 2.3em;
+            margin: -0.7em 0 0 0;
+            cursor: pointer;
+        }
+    }
+    section.hero{
+        color: white;
+        height: 90vh;
+        animation: moveText ease-in-out 1s forwards;
+        opacity: 0;
+        h1{
+            font-size: 3rem;
+            margin-top: 2em;
+            line-height: 3.3rem;
+        }
+        .subhead{
+            font-size: 1.4rem;
+        }
+        svg{
+            stroke: white;
+            position: absolute;
+            bottom: 6em;
+            width: 1em;
+            animation: moveArrow 1s alternate-reverse infinite;
+            path{
+                fill: white;
+            }
+        }
+    }
+    .more-info{
+        .content{
+            margin-top: 3em;
+        }
+        .title{
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        text{
+            line-height: 1.5rem;
+        }
+        img{
+            width: 100%;
+            height: 12em ;
+            object-fit: cover;
+        }
+    }
+}
+.open-nav{
+            transform: translateX(0%);
+        }
+@media only screen and (min-width:680px){
+    body{
+        margin: 1.5em 4em;
+    }
+
+}
+@media only screen and (min-width:750px){
+    body{
+        .menu-icon{
+            display: none;
+        }
+        .nav{
+            transform: translateX(0);
+            position: unset;
+            background: none;
+            border-left: none;
+            width: auto;
+            height: auto;
+            display: block;
+            .close{
+                display: none;
+            }
+            ul{
+                display: flex;
+                margin: 0;
+               a{
+                color: white;
+                width: auto;
+                padding: .5em 1.5em;
+                &:hover{
+                    background-color: rgb(129, 14, 14);
+                    border-radius: 5px;
+                }
+               }
+            }
+        }
+        .more-info{
+            img{
+                height: 15em;
+            }
+        }
+    }   
+}
+@media only screen and (min-width:1000px){
+    body{
+        // margin: 3em 8em;
+        .hero-img{
+            left: unset;
+            right: 0;
+            width: 50%;
+            height: 80vh;
+        }
+       .logo{
+        font-style: italic;
+        font-weight: 300px;
+        color: black;
+        font-style: italic;
+        .logo-name{
+            color: rgb(202,9,28);
+        }
+        .shoe-text{
+            color: #ff0a7c;
+        }
+        .brand{
+            color: #ff5b0f;
+        }
+        &:hover{
+            .logo-name{
+                color: rgb(175, 17, 33);
+            }
+            .shoe-text{
+                color: #eb046f;
+            }
+            .brand{
+                color: #e44901;
+            }
+        }
+       }section.hero{
+        color: black;
+        width: 40%;
+        height: auto;
+        margin-top: 5em;
+        margin-bottom: 10em;
+        svg{
+            margin-top: 5em;
+            position: unset;
+            stroke: black;
+            path{
+                fill: black;
+            }
+        }
+       }
+       .more-info{
+        margin: auto;
+        margin-right: 2em;
+        .feature{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 3em;
+            margin-bottom: 8em;
+            img{
+                width: 25em;
+            }
+            .content{
+                text-align: right;
+                width: 25em;
+            }
+        }
+       }
+       .nav ul a{
+        padding: .5em 2em;
+       }
+       .feature.left{
+        grid-template-areas: "left right";
+        img{
+            grid-area: left;
+        }
+        .content{
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+        }
+       }
+    }
+    
+
+}
+@keyframes introLoad {
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 2% 98%);
+    }
+}
+@keyframes moveArrow {
+    from{
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+@keyframes moveText{
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
